@@ -52,6 +52,10 @@ function parse(e) {
       var lexed = marked.lexer(e.data.markdown, e.data.options);
       var lexedList = jsonString(lexed);
       var parsed = marked.parser(lexed, e.data.options);
+      console.log('using marked.parse fed lexed');
+      console.log(parsed);
+      console.log('using just marked');
+      console.log(marked(e.data.markdown, e.data.options));
       var endTime = new Date();
       postMessage({
         id: e.data.id,
